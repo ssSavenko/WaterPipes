@@ -2,53 +2,50 @@
 
 namespace WaterPipes
 {
-    class PrintableField : IPrintaleField
+    class PrintableFieldWithCursor : PrintableField, IPrintableFieldWithCursor
     {
-        private readonly Field fieldForPrint;
+        private readonly Cursor cursorForPrint;
 
         private char symbolOfBounds = '+';
         private char symbolOfCellWithPipe = '0';
+        private char symbolOfCurs = 'X';
         private char symbolOfSourceCell = 'S';
         private char symbolOfEmptyCell = ' ';
 
-        public  PrintableField(Field inputedField)
+        public PrintableFieldWithCursor(Field inputedField, Cursor inputedCursor) : base (inputedField)
         {
+            cursorForPrint = inputedCursor;
         }
 
-        public Field GetFieldForPrint
+        public void PrintFieldWithCursor()
         {
-            get { return fieldForPrint; }
-        }
-
-        public void PrintField()
-        {
-            for(int i = 0; i <= fieldForPrint.Height; i++)
+            for (int i = 0; i <= GetFieldForPrint.Height; i++)
             {
                 Console.ForegroundColor = ConsoleColor.Gray;
-                if (i == 0 || i == fieldForPrint.Height)
+                if (i == 0 || i == GetFieldForPrint.Height)
                 {
-                    for (int k = 0; k <= fieldForPrint.Width; k++)
+                    for (int k = 0; k <= GetFieldForPrint.Width; k++)
                     {
                         Console.Write(symbolOfBounds);
                     }
                 }
                 else
                 {
-                    for (int j = 0; j <= fieldForPrint.Width; j++)
+                    for (int j = 0; j <= GetFieldForPrint.Width; j++)
                     {
-                        if (j == 0 || j == fieldForPrint.Width)
+                        if (j == 0 || j == GetFieldForPrint.Width)
                         {
                             Console.Write(symbolOfBounds);
                         }
-                        else if (fieldForPrint[i, j] == Cell.CellContainsPipe)
+                        else if (GetFieldForPrint[i, j] == Cell.CellContainsPipe)
                         {
                             Console.Write(symbolOfCellWithPipe);
                         }
-                        else if (fieldForPrint[i, j] == Cell.CellContainsSource)
+                        else if (GetFieldForPrint[i, j] == Cell.CellContainsSource)
                         {
                             Console.Write(symbolOfSourceCell);
                         }
-                        else 
+                        else
                         {
                             Console.Write(symbolOfEmptyCell);
                         }
