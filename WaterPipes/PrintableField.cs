@@ -13,6 +13,7 @@ namespace WaterPipes
 
         public  PrintableField(Field inputedField)
         {
+            fieldForPrint = inputedField;
         }
 
         public Field GetFieldForPrint
@@ -36,20 +37,29 @@ namespace WaterPipes
                 {
                     for (int j = 0; j <= fieldForPrint.Width; j++)
                     {
-                        if (j == 0 || j == fieldForPrint.Width)
+                        if (j == 0 || j == GetFieldForPrint.Width)
                         {
+                            Console.ForegroundColor = ConsoleColor.Gray;
                             Console.Write(symbolOfBounds);
                         }
-                        else if (fieldForPrint[i, j] == Cell.CellContainsPipe)
+                        else if (GetFieldForPrint[i, j] == Cell.CellContainsPipe)
                         {
+                            Console.ForegroundColor = ConsoleColor.Gray;
                             Console.Write(symbolOfCellWithPipe);
                         }
-                        else if (fieldForPrint[i, j] == Cell.CellContainsSource)
+                        else if (GetFieldForPrint[i, j] == Cell.CellContainsPipeWithWater)
                         {
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.Write(symbolOfCellWithPipe);
+                        }
+                        else if (GetFieldForPrint[i, j] == Cell.CellContainsSource)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.Write(symbolOfSourceCell);
                         }
-                        else 
+                        else
                         {
+                            Console.ForegroundColor = ConsoleColor.Gray;
                             Console.Write(symbolOfEmptyCell);
                         }
                     }

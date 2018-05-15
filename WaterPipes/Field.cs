@@ -26,9 +26,16 @@
             }
         }
 
+        public Cell this[int i, int j]
+        {
+            get { return fieldOfCells[i, j]; }
+
+            set { fieldOfCells[i, j] = value; }
+        }
+
         public int Height
         {
-            get{return height;}
+            get { return height; }
         }
 
         public int Width
@@ -39,35 +46,6 @@
         public Cell[,] FieldOfCells
         {
             get { return fieldOfCells; }
-        }
-
-        public Cell this[int yCord , int xCord ]
-        {
-            get
-            {
-                if (yCord > height || xCord > width)
-                {
-                    throw new System.ArgumentOutOfRangeException();
-                }
-                else if (yCord < 0 || xCord < 0)
-                {
-                    throw new System.ArgumentOutOfRangeException();
-                }
-                return fieldOfCells[yCord, xCord];
-            }
-
-            set
-            {
-                if (yCord > height || xCord > width)
-                {
-                    throw new System.ArgumentOutOfRangeException();
-                }
-                else if (yCord < 0 || xCord < 0)
-                {
-                    throw new System.ArgumentOutOfRangeException();
-                }
-                fieldOfCells[yCord, xCord] = value;
-            }
         }
     }
 }

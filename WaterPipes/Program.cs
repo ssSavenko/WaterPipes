@@ -6,8 +6,9 @@ namespace WaterPipes
     {
         static void Main(string[] args)
         {
-            PrintableField a = new PrintableField(10, 10);
-            a.PrintField();
+            Field myf = new Field(10, 10);
+            PrintableFieldWithCursor a = new PrintableFieldWithCursor(myf, new Cursor(10,10));
+            a.PrintFieldWithCursor();
         }
     }
 }

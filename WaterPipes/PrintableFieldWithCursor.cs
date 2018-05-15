@@ -8,7 +8,7 @@ namespace WaterPipes
 
         private char symbolOfBounds = '+';
         private char symbolOfCellWithPipe = '0';
-        private char symbolOfCurs = 'X';
+        private char symbolOfCursor = 'X';
         private char symbolOfSourceCell = 'S';
         private char symbolOfEmptyCell = ' ';
 
@@ -35,18 +35,32 @@ namespace WaterPipes
                     {
                         if (j == 0 || j == GetFieldForPrint.Width)
                         {
+                            Console.ForegroundColor = ConsoleColor.Gray;
                             Console.Write(symbolOfBounds);
+                        }
+                        else if (cursorForPrint.XCordinate + 1 == j && cursorForPrint.YCordinate + 1 == i)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write(symbolOfCursor);
                         }
                         else if (GetFieldForPrint[i, j] == Cell.CellContainsPipe)
                         {
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                            Console.Write(symbolOfCellWithPipe);
+                        }
+                        else if (GetFieldForPrint[i, j] == Cell.CellContainsPipeWithWater)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Blue;
                             Console.Write(symbolOfCellWithPipe);
                         }
                         else if (GetFieldForPrint[i, j] == Cell.CellContainsSource)
                         {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.Write(symbolOfSourceCell);
                         }
                         else
                         {
+                            Console.ForegroundColor = ConsoleColor.Gray;
                             Console.Write(symbolOfEmptyCell);
                         }
                     }
