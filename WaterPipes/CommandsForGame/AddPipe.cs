@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WaterPipes.CommandsForCursor
+namespace WaterPipes.CommandsForGame
 {
     internal class AddPipe : ICommandForGame
     {
@@ -15,7 +15,7 @@ namespace WaterPipes.CommandsForCursor
             cursorForChanges = inputedCursor;
         }
 
-        public void performCommand(ConsoleKey inputedKey)
+        public void PerformCommand(ConsoleKey inputedKey)
         {
             if (inputedKey == ConsoleKey.Enter)
             {

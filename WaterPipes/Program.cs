@@ -4,11 +4,10 @@ namespace WaterPipes
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Field myf = new Field(10, 10);
-            PrintableFieldWithCursor a = new PrintableFieldWithCursor(myf, new Cursor(10,10));
-            a.PrintFieldWithCursor();
+            Game waterPipeGame = new Game(10, 10, 400);
+            waterPipeGame.Run();
         }
     }
 }

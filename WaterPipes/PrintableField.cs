@@ -23,36 +23,36 @@ namespace WaterPipes
 
         public void PrintField()
         {
-            for(int i = 0; i <= fieldForPrint.Height; i++)
+            for (int i = 0; i <= GetFieldForPrint.Height + 1; i++)
             {
                 Console.ForegroundColor = ConsoleColor.Gray;
-                if (i == 0 || i == fieldForPrint.Height)
+                if (i == 0 || i == GetFieldForPrint.Height + 1)
                 {
-                    for (int k = 0; k <= fieldForPrint.Width; k++)
+                    for (int k = 0; k <= GetFieldForPrint.Width + 1; k++)
                     {
                         Console.Write(symbolOfBounds);
                     }
                 }
                 else
                 {
-                    for (int j = 0; j <= fieldForPrint.Width; j++)
+                    for (int j = -1; j <= GetFieldForPrint.Width; j++)
                     {
-                        if (j == 0 || j == GetFieldForPrint.Width)
+                        if (j == -1 || j == GetFieldForPrint.Width)
                         {
                             Console.ForegroundColor = ConsoleColor.Gray;
                             Console.Write(symbolOfBounds);
                         }
-                        else if (GetFieldForPrint[i, j] == Cell.CellContainsPipe)
+                        else if (GetFieldForPrint[i - 1, j] == Cell.CellContainsPipe)
                         {
                             Console.ForegroundColor = ConsoleColor.Gray;
                             Console.Write(symbolOfCellWithPipe);
                         }
-                        else if (GetFieldForPrint[i, j] == Cell.CellContainsPipeWithWater)
+                        else if (GetFieldForPrint[i - 1, j] == Cell.CellContainsPipeWithWater)
                         {
                             Console.ForegroundColor = ConsoleColor.Blue;
                             Console.Write(symbolOfCellWithPipe);
                         }
-                        else if (GetFieldForPrint[i, j] == Cell.CellContainsSource)
+                        else if (GetFieldForPrint[i - 1, j] == Cell.CellContainsSource)
                         {
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.Write(symbolOfSourceCell);

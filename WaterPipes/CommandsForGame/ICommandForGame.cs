@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace WaterPipes
+namespace WaterPipes.CommandsForGame
 {
     interface ICommandForGame
     {
-        void performCommand(ConsoleKey inputedKey);
+        void PerformCommand(ConsoleKey inputedKey);
     }
 }

@@ -25,7 +25,7 @@
             }
             set
             {
-                if (0 < value && value < maxXCordinate)
+                if (0 <= value && value < maxXCordinate)
                 {
                     xCordinate = value;
                 }
@@ -40,7 +40,7 @@
             }
             set
             {
-                if (0 < value && value < maxYCordinate)
+                if (0 <= value && value < maxYCordinate)
                 {
                     yCordinate = value;
                 }

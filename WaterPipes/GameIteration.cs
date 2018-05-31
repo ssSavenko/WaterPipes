@@ -21,67 +21,69 @@
                 {
                     if (fieldForChanges[i, j] == Cell.CellContainsPipe)
                     {
-                        if (i > 0)
+                        if (!WasPastStringChanged[j])
                         {
-                            if (!WasPastStringChanged[j])
+                            WasPastStringChanged[j] = false;
+                            WasPastCellChanged = false;
+
+                            if (i < fieldForChanges.Width - 1)
                             {
-                                if (fieldForChanges[i - 1, j] == Cell.CellContainsPipeWithWater || fieldForChanges[i - 1, j] == Cell.CellContainsSource)
+                                if (fieldForChanges[i + 1, j] == Cell.CellContainsPipeWithWater || fieldForChanges[i + 1, j] == Cell.CellContainsSource)
                                 {
                                     fieldForChanges[i, j] = Cell.CellContainsPipeWithWater;
                                     WasPastStringChanged[j] = true;
-                                    IsFieldWereChanged = true;
-                                }
-                                else
-                                {
-                                    WasPastStringChanged[j] = false;
-                                }
-                            }
-                            else
-                            {
-                                WasPastStringChanged[j] = false;
-                            }
-                        }
-                        else if (j > 0)
-                        {
-                            if (!WasPastCellChanged)
-                            {
-                                if (fieldForChanges[i, j - 1] == Cell.CellContainsPipeWithWater || fieldForChanges[i, j - 1] == Cell.CellContainsSource)
-                                {
-                                    fieldForChanges[i, j] = Cell.CellContainsPipeWithWater;
                                     WasPastCellChanged = true;
                                     IsFieldWereChanged = true;
                                 }
-                                else
+                            }
+
+                            if (i != fieldForChanges.Height && i > 0)
+                            {
+                                if (!WasPastStringChanged[j])
                                 {
-                                    WasPastCellChanged = false;
+                                    if (fieldForChanges[i - 1, j] == Cell.CellContainsPipeWithWater || fieldForChanges[i - 1, j] == Cell.CellContainsSource)
+                                    {
+                                        fieldForChanges[i, j] = Cell.CellContainsPipeWithWater;
+                                        WasPastStringChanged[j] = true;
+                                        WasPastCellChanged = true;
+                                        IsFieldWereChanged = true;
+                                    }
                                 }
                             }
                         }
-                        else if (i < fieldForChanges.Height)
+
+                        if (!WasPastCellChanged && fieldForChanges[i, j] != Cell.CellContainsPipeWithWater)
                         {
-                            if (fieldForChanges[i + 1, j] == Cell.CellContainsPipeWithWater || fieldForChanges[i + 1, j] == Cell.CellContainsSource)
+                            WasPastCellChanged = false;
+                            if (j != fieldForChanges.Width && j > 0)
                             {
-                                fieldForChanges[i, j] = Cell.CellContainsPipeWithWater;
-                                WasPastStringChanged[j] = true;
-                                IsFieldWereChanged = true;
+                                if (!WasPastStringChanged[j])
+                                {
+                                    if (fieldForChanges[i, j - 1] == Cell.CellContainsPipeWithWater || fieldForChanges[i, j - 1] == Cell.CellContainsSource)
+                                    {
+                                        fieldForChanges[i, j] = Cell.CellContainsPipeWithWater;
+                                        WasPastStringChanged[j] = true;
+                                        WasPastCellChanged = true;
+                                        IsFieldWereChanged = true;
+                                    }
+                                }
                             }
-                            else
+                            if (j < fieldForChanges.Height - 1)
                             {
-                                WasPastStringChanged[j] = false;
+                                if (fieldForChanges[i, j + 1] == Cell.CellContainsPipeWithWater || fieldForChanges[i, j + 1] == Cell.CellContainsSource)
+                                {
+                                    fieldForChanges[i, j] = Cell.CellContainsPipeWithWater;
+                                    WasPastStringChanged[j] = true;
+                                    WasPastCellChanged = true;
+                                    IsFieldWereChanged = true;
+                                }
                             }
                         }
-                        else if (j < fieldForChanges.Width)
+
+                        if (fieldForChanges[i, j] == Cell.CellIsEmpty)
                         {
-                            if (fieldForChanges[i, j + 1] == Cell.CellContainsPipeWithWater || fieldForChanges[i, j + 1] == Cell.CellContainsSource)
-                            {
-                                fieldForChanges[i, j] = Cell.CellContainsPipeWithWater;
-                                WasPastCellChanged = true;
-                                IsFieldWereChanged = true;
-                            }
-                            else
-                            {
-                                WasPastCellChanged = false;
-                            }
+                            WasPastStringChanged[j] = false;
+                            WasPastCellChanged = false;
                         }
                     }
                 }

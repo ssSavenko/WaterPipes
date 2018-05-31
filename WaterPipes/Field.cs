@@ -29,7 +29,6 @@
         public Cell this[int i, int j]
         {
             get { return fieldOfCells[i, j]; }
-
             set { fieldOfCells[i, j] = value; }
         }
 
