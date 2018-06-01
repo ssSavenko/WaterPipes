@@ -2,11 +2,11 @@
 
 namespace WaterPipes
 {
-    class Program
+    internal class Program
     {
-        static void Main()
+        static public void Main()
         {
-            Game waterPipeGame = new Game(10, 10, 400);
+            Game waterPipeGame = new Game( 30, 15, 400);
             waterPipeGame.Run();
         }
     }

@@ -6,8 +6,8 @@ namespace WaterPipes.CommandsForGame
 {
     internal class ClearCell : ICommandForGame
     {
-        Field fieldForChanges;
         Cursor cursorForChanges;
+        Field fieldForChanges;
 
         public ClearCell(Field inputedField, Cursor inputedCursor)
         {
@@ -17,7 +17,7 @@ namespace WaterPipes.CommandsForGame
 
         public void PerformCommand(ConsoleKey inputedKey)
         {
-            if (inputedKey == ConsoleKey.Backspace)
+            if (inputedKey == ConsoleKey.Delete)
             {
                 fieldForChanges[cursorForChanges.YCordinate, cursorForChanges.XCordinate] = Cell.CellIsEmpty;
             }

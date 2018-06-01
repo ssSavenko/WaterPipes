@@ -18,14 +18,47 @@
             {
                 for (int j = 0; j < fieldForChanges.Width; j++)
                 {
-                    if (fieldForChanges[j, i] == Cell.CellContainsPipe)
+                    if (fieldForChanges[i, j] == Cell.CellContainsPipe)
                     {
-                        bool isNearSource = (fieldForChanges[j + 1, i] == Cell.CellContainsPipeWithWater || fieldForChanges[j + 1, i] == Cell.CellContainsSource);
-                        isNearSource = (fieldForChanges[j - 1, i] == Cell.CellContainsPipeWithWater || fieldForChanges[j + 1, i] == Cell.CellContainsSource) || isNearSource;
+                        bool isNearSource = false;
+                        if (i + 1 < fieldForChanges.Height)
+                        {
+                            isNearSource = fieldForChanges[i + 1, j] == Cell.CellContainsPipeWithWater || fieldForChanges[i + 1, j] == Cell.CellContainsSource;
+                        }
+                        if (i > 0 && !isNearSource)
+                        {
+                            isNearSource = fieldForChanges[i - 1, j] == Cell.CellContainsPipeWithWater || fieldForChanges[i - 1, j] == Cell.CellContainsSource;
+                        }
+                        if (j > 0 && !isNearSource)
+                        {
+                            isNearSource = fieldForChanges[i, j - 1] == Cell.CellContainsPipeWithWater || fieldForChanges[i, j - 1] == Cell.CellContainsSource;
+                        }
+                        if (j + 1 < fieldForChanges.Width && !isNearSource)
+                        {
+                            isNearSource = fieldForChanges[i, j + 1] == Cell.CellContainsPipeWithWater || fieldForChanges[i, j + 1] == Cell.CellContainsSource;
+                        }
+
+                        if (isNearSource)
+                        {
+                            newField[i, j] = Cell.CellContainsPipeWithWater;
+                            wasFieldChanged = true;
+                        }
+                        else
+                        {
+                            newField[i, j] = Cell.CellContainsPipe;
+                        }
+                    }
+                    else if (fieldForChanges[i, j] == Cell.CellContainsPipeWithWater)
+                    {
+                        newField[i, j] = Cell.CellContainsPipeWithWater;
+                    }
+                    else if (fieldForChanges[i, j] == Cell.CellContainsSource)
+                    {
+                        newField[i, j] = Cell.CellContainsSource;
                     }
                 }
             }
-
+            fieldForChanges.CopyFieldData(newField);
             return wasFieldChanged;
         }
     }

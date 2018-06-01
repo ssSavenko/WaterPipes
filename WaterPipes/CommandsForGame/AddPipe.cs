@@ -6,8 +6,8 @@ namespace WaterPipes.CommandsForGame
 {
     internal class AddPipe : ICommandForGame
     {
-        Field fieldForChanges;
         Cursor cursorForChanges;
+        Field fieldForChanges;
 
         public AddPipe(Field inputedField, Cursor inputedCursor)
         {

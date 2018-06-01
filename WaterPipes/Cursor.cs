@@ -8,7 +8,7 @@
         private int xCordinate;
         private int yCordinate;
 
-        public Cursor (int xCordinateBorder, int yCordinateBorder)
+        public Cursor(int xCordinateBorder, int yCordinateBorder)
         {
             maxXCordinate = xCordinateBorder;
             maxYCordinate = yCordinateBorder;
@@ -19,10 +19,7 @@
 
         public int XCordinate
         {
-            get
-            {
-                return xCordinate;
-            }
+            get{ return xCordinate; }
             set
             {
                 if (0 <= value && value < maxXCordinate)
@@ -35,9 +32,7 @@
         public int YCordinate
         {
             get
-            {
-                return yCordinate;
-            }
+            { return yCordinate; }
             set
             {
                 if (0 <= value && value < maxYCordinate)
@@ -45,7 +40,6 @@
                     yCordinate = value;
                 }
             }
-
         }
     }
 }

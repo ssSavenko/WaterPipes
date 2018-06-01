@@ -5,9 +5,10 @@ namespace WaterPipes
 {
     internal class Game
     {
+        private int countOfSteps;
         private int height;
-        private int width;
         private int pause;
+        private int width;
 
         private Cursor gameCursor;
         private Field gameField;
@@ -34,21 +35,27 @@ namespace WaterPipes
         {
             while (!isGameHasToStart.IsGameReady)
             {
-                gamePrintableField.PrintFieldWithCursor();
                 Console.Clear();
+                ShowCountOfSteps();
                 gamePrintableField.PrintFieldWithCursor();
                 commands.PerformCommands(Console.ReadKey().Key);
             }
 
-            Console.Clear();
-            gamePrintableField.PrintField();
-
             while (gameIterations.ChangeField())
             {
+                countOfSteps++;
                 Console.Clear();
+                ShowCountOfSteps();
                 gamePrintableField.PrintField();
                 Thread.Sleep(pause);
             }
+        }
+
+        public void ShowCountOfSteps()
+        {
+            Console.Write("Step: ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(countOfSteps);
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace WaterPipes
 {
-    class PrintableFieldWithCursor : PrintableField, IPrintableFieldWithCursor
+    internal class PrintableFieldWithCursor : PrintableField, IPrintableFieldWithCursor
     {
         private readonly Cursor cursorForPrint;
 

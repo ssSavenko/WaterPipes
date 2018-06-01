@@ -42,6 +42,17 @@
             get { return width; }
         }
 
+        public void CopyFieldData(Field copyField)
+        {
+            for (int i = 0;  i < height; i++)
+            {
+                for (int j =0; j < width; j++)
+                {
+                    fieldOfCells[i, j] = copyField[i, j];
+                }
+            }
+        }
+
         public Cell[,] FieldOfCells
         {
             get { return fieldOfCells; }
