@@ -2,7 +2,7 @@
 
 namespace WaterPipes.CommandsForGame
 {
-    interface ICommandForGame
+    internal interface ICommandForGame
     {
         void PerformCommand(ConsoleKey inputedKey);
     }

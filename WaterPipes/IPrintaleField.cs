@@ -1,6 +1,6 @@
 ﻿namespace WaterPipes
 {
-    interface IPrintaleField
+    internal interface IPrintaleField
     {
         void PrintField();
     }

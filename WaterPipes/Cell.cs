@@ -1,6 +1,6 @@
 ﻿namespace WaterPipes
 {
-    enum Cell
+    internal enum Cell
     {
         CellContainsPipe,
         CellContainsPipeWithWater,
