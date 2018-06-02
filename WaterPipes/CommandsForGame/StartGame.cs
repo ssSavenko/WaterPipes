@@ -4,18 +4,18 @@ namespace WaterPipes.CommandsForGame
 {
     internal class StartGame : ICommandForGame
     {
-        private IsGameHasToStart GameState;
+        private IsGameHasToStart gameState;
 
         public StartGame(IsGameHasToStart InputedGameState)
         {
-            GameState = InputedGameState;
+            gameState = InputedGameState;
         }
 
         public void PerformCommand(ConsoleKey inputedKey)
         {
             if (inputedKey == ConsoleKey.Spacebar)
             {
-                GameState.IsGameReady = true;
+                gameState.IsGameReady = true;
             }
         }
     }
