@@ -4,7 +4,7 @@ namespace WaterPipes.CommandsForGame
 {
     internal class StartGame : ICommandForGame
     {
-        IsGameHasToStart GameState;
+        private IsGameHasToStart GameState;
 
         public StartGame(IsGameHasToStart InputedGameState)
         {

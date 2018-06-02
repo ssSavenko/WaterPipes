@@ -4,8 +4,8 @@ namespace WaterPipes.CommandsForGame
 {
     internal class AddSource : ICommandForGame
     {
-        Cursor cursorForChanges;
-        Field fieldForChanges;
+        private Cursor cursorForChanges;
+        private Field fieldForChanges;
 
         public AddSource(Field inputedField, Cursor inputedCursor)
         {

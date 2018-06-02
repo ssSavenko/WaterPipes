@@ -4,8 +4,8 @@ namespace WaterPipes.CommandsForGame
 {
     internal class ClearCell : ICommandForGame
     {
-        Cursor cursorForChanges;
-        Field fieldForChanges;
+        private Cursor cursorForChanges;
+        private Field fieldForChanges;
 
         public ClearCell(Field inputedField, Cursor inputedCursor)
         {

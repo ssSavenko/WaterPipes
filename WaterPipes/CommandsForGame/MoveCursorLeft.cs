@@ -4,7 +4,7 @@ namespace WaterPipes.CommandsForGame
 {
     internal class MoveCursorLeft : ICommandForGame
     {
-        Cursor cursorForChanges;
+        private Cursor cursorForChanges;
 
         public MoveCursorLeft(Cursor inputedCursor)
         {
