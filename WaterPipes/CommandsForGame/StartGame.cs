@@ -8,7 +8,7 @@ namespace WaterPipes.CommandsForGame
     {
         IsGameHasToStart GameState;
 
-        public StartGame (IsGameHasToStart InputedGameState)
+        public StartGame(IsGameHasToStart InputedGameState)
         {
             GameState = InputedGameState;
         }

@@ -11,7 +11,7 @@ namespace WaterPipes
         private char symbolOfSourceCell = 'S';
         private char symbolOfEmptyCell = ' ';
 
-        public  PrintableField(Field inputedField)
+        public PrintableField(Field inputedField)
         {
             fieldForPrint = inputedField;
         }
