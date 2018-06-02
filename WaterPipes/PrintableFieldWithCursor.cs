@@ -5,12 +5,7 @@ namespace WaterPipes
     internal class PrintableFieldWithCursor : PrintableField, IPrintableFieldWithCursor
     {
         private readonly Cursor cursorForPrint;
-
-        private char symbolOfBounds = '+';
-        private char symbolOfCellWithPipe = '0';
         private char symbolOfCursor = 'X';
-        private char symbolOfSourceCell = 'S';
-        private char symbolOfEmptyCell = ' ';
 
         public PrintableFieldWithCursor(Field inputedField, Cursor inputedCursor) : base (inputedField)
         {
