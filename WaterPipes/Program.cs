@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace WaterPipes
+﻿namespace WaterPipes
 {
     internal class Program
     {
