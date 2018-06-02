@@ -31,8 +31,7 @@
 
         public int YCordinate
         {
-            get
-            { return yCordinate; }
+            get{ return yCordinate; }
             set
             {
                 if (0 <= value && value < maxYCordinate)
