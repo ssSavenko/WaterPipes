@@ -1,6 +1,6 @@
 ﻿namespace WaterPipes
 {
-    internal interface IPrintableFieldWithCursor : IPrintaleField
+    internal interface IPrintableFieldWithCursor : IPrintableField
     {
         void PrintFieldWithCursor();
     }

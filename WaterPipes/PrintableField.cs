@@ -2,7 +2,7 @@
 
 namespace WaterPipes
 {
-    internal class PrintableField : IPrintaleField
+    internal class PrintableField : IPrintableField
     {
         private readonly Field fieldForPrint;
 
