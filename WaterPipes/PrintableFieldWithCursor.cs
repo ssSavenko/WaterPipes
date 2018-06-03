@@ -16,10 +16,16 @@ namespace WaterPipes
         {
             int startCursorYPosition = Console.CursorTop + 1;
             int startCursorXPosition = Console.CursorLeft + 1;
+
             PrintField();
+
+            int lastCursorXPosition = Console.CursorLeft;
+            int lastCursorYPosition = Console.CursorTop;
 
             Console.SetCursorPosition(cursorForPrint.XCordinate + startCursorXPosition, cursorForPrint.YCordinate + startCursorYPosition);
             Console.Write(symbolOfCursor);
+            Console.SetCursorPosition(lastCursorXPosition, lastCursorYPosition);
+            Console.Write("10");
         }
     }
 }
