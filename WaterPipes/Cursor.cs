@@ -19,7 +19,7 @@
 
         public int XCordinate
         {
-            get{ return xCordinate; }
+            get { return xCordinate; }
             set
             {
                 if (0 <= value && value < maxXCordinate)
@@ -31,7 +31,7 @@
 
         public int YCordinate
         {
-            get{ return yCordinate; }
+            get { return yCordinate; }
             set
             {
                 if (0 <= value && value < maxYCordinate)
