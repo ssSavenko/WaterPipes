@@ -31,6 +31,11 @@
             get { return fieldOfCells[i, j]; }
             set { fieldOfCells[i, j] = value; }
         }
+        
+        public Cell[,] FieldOfCells
+        {
+            get { return fieldOfCells; }
+        }
 
         public int Height
         {
@@ -51,11 +56,6 @@
                     fieldOfCells[i, j] = copyField[i, j];
                 }
             }
-        }
-
-        public Cell[,] FieldOfCells
-        {
-            get { return fieldOfCells; }
         }
     }
 }
