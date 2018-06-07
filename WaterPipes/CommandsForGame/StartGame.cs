@@ -6,9 +6,9 @@ namespace WaterPipes.CommandsForGame
     {
         private IsGameHasToStart gameState;
 
-        public StartGame(IsGameHasToStart InputedGameState)
+        public StartGame(IsGameHasToStart inputedGameState)
         {
-            gameState = InputedGameState;
+            gameState = inputedGameState;
         }
 
         public void PerformCommand(ConsoleKey inputedKey)
