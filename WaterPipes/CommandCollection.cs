@@ -24,7 +24,7 @@ namespace WaterPipes
 
         public void PerformCommands(ConsoleKey inputedKey)
         {
-            foreach(ICommandForGame command in commands)
+            foreach (ICommandForGame command in commands)
             {
                 command.PerformCommand(inputedKey);
             }
