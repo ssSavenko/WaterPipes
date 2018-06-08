@@ -5,11 +5,11 @@ namespace WaterPipes
 {
     internal class CommandCollection
     {
-        private ICommandForGame[] Commands;
+        private ICommandForGame[] commands;
 
-        public CommandCollection(Field inputedField, Cursor inputedCursor, IsGameHasToStart GameStartState)
+        public CommandCollection(Field inputedField, Cursor inputedCursor, IsGameHasToStart gameStartState)
         {
-            Commands = new ICommandForGame[]
+            commands = new ICommandForGame[]
             {
                 new AddPipe(inputedField, inputedCursor),
                 new AddSource(inputedField, inputedCursor),
@@ -18,13 +18,13 @@ namespace WaterPipes
                 new MoveCursorLeft(inputedCursor),
                 new MoveCursorRight(inputedCursor),
                 new MoveCursorUp(inputedCursor),
-                new StartGame(GameStartState)
+                new StartGame(gameStartState)
             };
         }
 
         public void PerformCommands(ConsoleKey inputedKey)
         {
-            foreach(ICommandForGame command in Commands)
+            foreach(ICommandForGame command in commands)
             {
                 command.PerformCommand(inputedKey);
             }
