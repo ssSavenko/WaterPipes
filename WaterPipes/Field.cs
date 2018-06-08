@@ -31,7 +31,7 @@
             get { return fieldOfCells[i, j]; }
             set { fieldOfCells[i, j] = value; }
         }
-        
+
         public Cell[,] FieldOfCells
         {
             get { return fieldOfCells; }
@@ -49,9 +49,9 @@
 
         public void CopyFieldData(Field copyField)
         {
-            for (int i = 0;  i < height; i++)
+            for (int i = 0; i < height; i++)
             {
-                for (int j =0; j < width; j++)
+                for (int j = 0; j < width; j++)
                 {
                     fieldOfCells[i, j] = copyField[i, j];
                 }

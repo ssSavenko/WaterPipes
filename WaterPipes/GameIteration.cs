@@ -14,7 +14,7 @@
             Field newField = new Field(fieldForChanges.Height, fieldForChanges.Width);
             bool wasFieldChanged = false;
 
-            for (int i =0; i < fieldForChanges.Height; i++)
+            for (int i = 0; i < fieldForChanges.Height; i++)
             {
                 for (int j = 0; j < fieldForChanges.Width; j++)
                 {
