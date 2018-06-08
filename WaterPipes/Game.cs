@@ -9,7 +9,6 @@ namespace WaterPipes
         private int height;
         private int pause;
         private int width;
-
         private Cursor gameCursor;
         private Field gameField;
         private IPrintableFieldWithCursor gamePrintableField;
