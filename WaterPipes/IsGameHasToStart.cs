@@ -2,7 +2,7 @@
 {
     internal class IsGameHasToStart
     {
-        private bool isGameReady = false;
+        private bool isGameReady;
 
         public bool IsGameReady
         {
