@@ -2,9 +2,9 @@
 {
     internal class Field
     {
-        public Cell[,] fieldOfCells;
         private readonly int height;
         private readonly int width;
+        public Cell[,] fieldOfCells;
 
         public Field(int fieldsHeigth, int fieldsWidth)
         {
