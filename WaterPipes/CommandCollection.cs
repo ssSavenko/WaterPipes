@@ -5,7 +5,7 @@ namespace WaterPipes
 {
     internal class CommandCollection
     {
-        ICommandForGame[] Commands;
+        private ICommandForGame[] Commands;
 
         public CommandCollection(Field inputedField, Cursor inputedCursor, IsGameHasToStart GameStartState)
         {
@@ -14,12 +14,10 @@ namespace WaterPipes
                 new AddPipe(inputedField, inputedCursor),
                 new AddSource(inputedField, inputedCursor),
                 new ClearCell(inputedField, inputedCursor),
-
                 new MoveCursorDown(inputedCursor),
                 new MoveCursorLeft(inputedCursor),
                 new MoveCursorRight(inputedCursor),
                 new MoveCursorUp(inputedCursor),
-
                 new StartGame(GameStartState)
             };
         }
