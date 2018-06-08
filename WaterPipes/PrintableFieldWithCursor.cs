@@ -25,7 +25,6 @@ namespace WaterPipes
             Console.SetCursorPosition(cursorForPrint.XCordinate + startCursorXPosition, cursorForPrint.YCordinate + startCursorYPosition);
             Console.Write(symbolOfCursor);
             Console.SetCursorPosition(lastCursorXPosition, lastCursorYPosition);
-            Console.Write("10");
         }
     }
 }
